@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      socket: new WebSocket('ws://localhost:8000/ws'),
+      socket: new WebSocket('wss://ws.listen-with-me.com/ws'),
       logged: false,
       roomName: '',
       isAdmin: false,
