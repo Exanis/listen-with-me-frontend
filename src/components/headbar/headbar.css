@@ -1,0 +1,74 @@
+.headbar {
+    border-bottom: 2px solid #FBFBFB;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.headbar .users {
+    position: absolute;
+    top: 80px;
+    left: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 21px;
+    font-size: 12px;
+    color: #fbfbfb;
+}
+
+.headbar .users:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 10%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	border-top: 0;
+	margin-left: -10px;
+    margin-top: -10px;
+}
+
+.headbar .users ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.headbar .users li {
+    padding: 0;
+    margin: 0;
+    margin-top: 20px;
+}
+
+.headbar .logo {
+    width: 34px;
+    height: 34px;
+    opacity: 0.8;
+}
+
+.headbar .clickable {
+    cursor: pointer;
+}
+
+.headbar .title {
+    padding-left: 20px;
+    letter-spacing: 10.8px;
+    color: #707070;
+    text-transform: uppercase;
+    opacity: 1;
+    font-size: 24px;
+    font-weight: lighter;
+    flex: 1;
+}
+
+.headbar form {
+    display: block;
+    flex: 1;
+}
+
+.headbar input {
+    width: calc(100% - 50px);
+    margin-right: 50px;
+}

@@ -1,0 +1,37 @@
+.App {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+
+.main {
+    margin-left: 104px;
+    margin-right: 104px;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    margin-top: 33px;
+}
+
+.main .left-part {
+    display: flex;
+    flex-direction: column;
+    margin-right: 86px;
+    width: 781px;
+}
+
+.main .right-part {
+    display: flex;
+    height: 100%;
+    overflow: auto;
+    flex: 1;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.outer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 200px;
+}

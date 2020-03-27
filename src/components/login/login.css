@@ -1,0 +1,8 @@
+.loginForm input {
+    width: calc(100% - 40px);
+}
+
+.loginForm input[type=submit] {
+    margin-top: 20px;
+    width: calc(100% - 10px);
+}

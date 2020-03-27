@@ -1,0 +1,69 @@
+.settings {
+    position: absolute;
+    top: 180px;
+    left: 525px;
+    width: 828px;
+    height: 564px;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    padding: 21px;
+}
+
+.settings .title {
+    color: #707070;
+    font-size: 24px;
+    font-weight: lighter;
+    letter-spacing: 10.8px;
+    text-transform: uppercase;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.settings .title div {
+    text-align: right;
+    flex: 1;
+}
+
+.settings .field {
+    padding: 21px;
+    border-top: 1px solid #F0F0F0;
+}
+
+.settings .field input, .settings .field select {
+    width: calc(100% - 44px);
+}
+
+.settings .field .label {
+    padding-bottom: 10px;
+}
+
+.settings .field.no-border {
+    border-top: none;
+}
+
+.settings .field.checkbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.settings .field.checkbox .label {
+    padding-bottom: 0;
+}
+
+.settings .field input[type=checkbox] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.settings .rowBottom {
+    display: flex;
+    flex-direction: row;
+}
+
+.settings .rowBottom * {
+    flex: 1;
+    margin: 10px;
+}

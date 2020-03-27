@@ -1,0 +1,33 @@
+.noresult {
+    text-transform: uppercase;
+    color: #707070;
+    font-size: 24px;
+    letter-spacing: 3px;
+}
+
+.result {
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
+}
+
+.result > img {
+    width: 100%;
+}
+
+.result .subheader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.result .subheader img {
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.result .title {
+    font-size: 14px;
+    flex: 1;
+}

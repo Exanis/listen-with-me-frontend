@@ -1,0 +1,129 @@
+.playlist {
+    margin-top: 33px;
+    margin-bottom: 33px;
+    border: 2px solid #FBFBFB;
+    padding: 21px;
+    position: relative;
+}
+
+.playlist .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.playlist .title {
+    color: #707070;
+    font-size: 24px;
+    font-weight: lighter;
+    flex: 1;
+}
+
+.playlist .header img {
+    cursor: pointer;
+    margin-left: 20px;
+    opacity: 0.7;
+}
+
+.playlist .share-link {
+    position: absolute;
+    right: 10px;
+    top: 70px;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 21px;
+    font-size: 12px;
+    color: #fbfbfb;
+}
+
+.playlist .share-link:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 85%;
+	width: 0;
+	height: 0;
+	border: 10px solid transparent;
+	border-bottom-color: rgba(0, 0, 0, 0.5);
+	border-top: 0;
+	margin-left: -10px;
+    margin-top: -10px;
+}
+
+.playlist .share-link div {
+    padding-bottom: 10px;
+    font-style: Medium;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.playlist .share-link input {
+    padding: 2px;
+}
+
+.playlist .songs {
+    margin: 0;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.playlist .songs li {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.playlist .songs img {
+    cursor: pointer;
+}
+
+.playlist .songs li .added_by {
+    flex-basis: 100%;
+}
+
+.playlist .songs li > img {
+    margin: 0 20px;
+}
+
+.playlist .songs li:last-child {
+    border-bottom: none;
+}
+
+.playlist .songs .title {
+    font-size: 14px;
+}
+
+.playlist .added_by {
+    padding-left: 55px;
+    font-size: 10px;
+    color: #909090;
+}
+
+.vote {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.vote img {
+    margin: 10px;
+    opacity: 0.5;
+}
+
+.upvote img {
+    transform: matrix(-1, 0, 0, -1, 0, 0);
+}
+
+.voted img {
+    opacity: 1;
+}
+
+.downed img {
+    opacity: 1;
+}
