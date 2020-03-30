@@ -11,8 +11,6 @@ function Player(props) {
                 'videoId': '',
                 'playerVars': {
                     'autoplay': 1,
-                    'controls': 0,
-                    'disablekb': 1
                 },
                 'events': {
                     'onReady': () => {

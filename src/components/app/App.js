@@ -13,7 +13,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      socket: new WebSocket('wss://ws.listen-with-me.com/ws'),
+      socket: new WebSocket('wss://backend.listen-with-me.com/ws'),
       logged: false,
       roomName: '',
       isAdmin: false,
@@ -36,6 +36,8 @@ class App extends React.Component {
       users: []
     }
     this.state.socket.onmessage = this.onWSEvent;
+    this.state.socket.onclose = () => alert('Connection au serveur perdue. Veuillez actualiser la page.');
+    this.state.socket.onerror = () => alert('Connection au serveur perdue. Veuillez actualiser la page.');
   }
 
   onUserLogin = (event) => {
