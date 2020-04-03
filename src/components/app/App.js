@@ -22,10 +22,15 @@ class App extends React.Component {
       playing: false,
       allowDownVote: false,
       removeThreshold: 3,
+      limitPerUser: false,
+      maxPerUser: 10,
       edit_roomName: '',
       edit_roomType: 'simple',
       edit_allowDownVote: false,
       edit_removeThreshold: 3,
+      edit_limitPerUser: false,
+      edit_maxPerUser: 10,
+      canAdd: true,
       loginUserName: window.localStorage.getItem('user.name'),
       searchContent: '',
       roomId: window.location.pathname.replace('/', ''),
@@ -96,10 +101,14 @@ class App extends React.Component {
           'roomType': data.room_type,
           'allowDownVote': data.allow_downvote,
           'removeThreshold': data.downvote_threeshold,
+          'limitPerUser': data.limit_per_user,
+          'maxPerUser': data.max_per_user,
           'edit_roomName': data.name,
           'edit_roomType': data.room_type,
           'edit_allowDownVote': data.allow_downvote,
-          'edit_removeThreshold': data.downvote_threeshold
+          'edit_removeThreshold': data.downvote_threeshold,
+          'edit_limitPerUser': data.limit_per_user,
+          'edit_maxPerUser': data.max_per_user
         });
         break;
       case 'room_updated':
@@ -108,15 +117,20 @@ class App extends React.Component {
           'roomType': data.room_type,
           'allowDownVote': data.allow_downvote,
           'removeThreshold': data.downvote_threeshold,
+          'limitPerUser': data.limit_per_user,
+          'maxPerUser': data.max_per_user,
           'edit_roomName': data.name,
           'edit_roomType': data.room_type,
           'edit_allowDownVote': data.allow_downvote,
-          'edit_removeThreshold': data.downvote_threeshold
+          'edit_removeThreshold': data.downvote_threeshold,
+          'edit_limitPerUser': data.limit_per_user,
+          'edit_maxPerUser': data.max_per_user
         });
         break;
       case 'songs_list':
         this.setState({
-          'songs': data.songs
+          'songs': data.songs,
+          'canAdd': data.can_add
         })
         break;
       case 'search_results':
@@ -224,6 +238,10 @@ class App extends React.Component {
     this.setState({edit_allowDownVote: event.target.checked});
   }
 
+  onLimitPerUserChange = (event) => {
+    this.setState({edit_limitPerUser: event.target.checked});
+  }
+
   onSettingsUpdate = (event) => {
     event.preventDefault();
     this.state.socket.send(JSON.stringify({
@@ -231,7 +249,9 @@ class App extends React.Component {
       'name': this.state.edit_roomName,
       'allow_downvote': this.state.edit_allowDownVote,
       'downvote_threeshold': this.state.edit_removeThreshold,
-      'room_type': this.state.edit_roomType
+      'room_type': this.state.edit_roomType,
+      'max_per_user': this.state.edit_maxPerUser,
+      'limit_per_user': this.state.edit_limitPerUser
     }));
     this.setState({displayParams: false});
   }
@@ -307,7 +327,7 @@ class App extends React.Component {
                 />
             </div>
             <div className="right-part">
-              <Search results={this.state.results} onAddSong={this.onAddSong} />
+              <Search results={this.state.results} onAddSong={this.onAddSong} canAddSong={this.state.canAdd} />
             </div>
           </div>
 
@@ -316,10 +336,14 @@ class App extends React.Component {
             roomType={this.state.edit_roomType}
             allowDownVote={this.state.edit_allowDownVote}
             removeThreshold={this.state.edit_removeThreshold}
+            limitPerUser={this.state.edit_limitPerUser}
+            maxPerUser={this.state.edit_maxPerUser}
             onRoomNameChange={this.settingsFieldChange('edit_roomName')}
             onRemoveThresholdChange={this.settingsFieldChange('edit_removeThreshold')}
             onRoomTypeChange={this.settingsFieldChange('edit_roomType')}
             onAllowDownVoteChange={this.onAllowDownVoteChange}
+            onLimitPerUserChange={this.onLimitPerUserChange}
+            onMaxPerUserChange={this.settingsFieldChange('edit_maxPerUser')}
             onSubmit={this.onSettingsUpdate}
             onClose={this.onClose}
            />}

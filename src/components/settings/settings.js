@@ -36,6 +36,16 @@ function Settings(props) {
                 <input type="number" step="1" value={props.removeThreshold} onChange={props.onRemoveThresholdChange} />
             </div>
 
+            <div className="field checkbox">
+                <input checked={props.limitPerUser} type="checkbox" onChange={props.onLimitPerUserChange} />
+                <div className="label">Limiter le nombre de vidéos par utilisateur</div>
+            </div>
+
+            <div className="field">
+                <div className="label">Nombre maximum de vidéos par utilisateur</div>
+                <input type="number" step="1" value={props.maxPerUser} onChange={props.onMaxPerUserChange} />
+            </div>
+
             <div className="rowBottom">
                 <input type="submit" value="Valider" />
                 <input type="submit" value="Annuler" onClick={props.onClose} />

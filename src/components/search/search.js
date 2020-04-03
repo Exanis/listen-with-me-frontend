@@ -13,7 +13,7 @@ function Search(props) {
         props.results.map(result => <div className="result" key={result.id}>
             <img src={result.thumbnail} alt={result.title} />
             <div className="subheader">
-                <img src={Add} alt="Ajouter à la playlist" onClick={() => props.onAddSong(result.id, result.title)} />
+                {props.canAddSong && <img src={Add} alt="Ajouter à la playlist" onClick={() => props.onAddSong(result.id, result.title)} />}
                 <div className="title" dangerouslySetInnerHTML={{__html: result.title}} />
             </div>
         </div>)
